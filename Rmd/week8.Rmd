@@ -2,7 +2,9 @@
 title: "PSY 8712 Week 8 Project"
 author: "Mackenzie R Nickle"
 date: "2024-03-15"
-output: html_document
+output: 
+  html_document:
+      df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # **Reproducible Image and Online Resources**
-An imae of this project as of *date* can be accessed by clicking <INSERT IMAGE LINK>
+An image of this project as of *date* can be accessed by clicking <INSERT IMAGE LINK>
 An interactive web app is available ny clicking <INSERT SHINY APP> instead
 
 # **Script Settings and Resources**
@@ -38,6 +40,18 @@ week8_tbl <- read_csv("../data/week3.csv") %>%
 ```
 
 # **Visualization**
+
+```{r}
+select(week8_tbl, paste0("q", 1:6))
+
+week8_tbl %>%
+  ggplot(aes(avg_q1q6, avg_q8q10)) + 
+  geom_point() +
+  geom_smooth(method=lm, color="purple", se=TRUE) +
+  labs(x="Mean Scores on Q1-Q6",
+       y= "Mean Scores on Q8-Q10",
+       title= "Figure 1")
+```
 
 # **Analysis**
 
