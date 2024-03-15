@@ -24,7 +24,7 @@ library(rsconnect)
 
 # **Data Import and Cleaning**
 For data import and cleaning, I followed the code from last week with the exception of reverse coding item five, which I did the way I was taught in a previous stats class by just subtracting each item by one more than the maximum for that number. I also created the average scores needed in the data visualization section by using rowMeans as I have done it that way in the past. 
-```{r}
+```{r, message=FALSE}
 week8_tbl <- read_csv("../data/week3.csv") %>%
   mutate(timestart= ymd_hms(timeStart),
          q5= 6-q5,
@@ -41,7 +41,7 @@ week8_tbl <- read_csv("../data/week3.csv") %>%
 
 # **Visualization**
 
-```{r}
+```{r, echo=FALSE, message=FALSE}
 select(week8_tbl, paste0("q", 1:6))
 
 week8_tbl %>%
@@ -54,5 +54,8 @@ week8_tbl %>%
 ```
 
 # **Analysis**
+```{r}
+
+```
 
 # **Data Export**
