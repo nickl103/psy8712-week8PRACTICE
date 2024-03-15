@@ -26,7 +26,11 @@ ui <- fluidPage(
             selectInput("errorband",
                         "Display or Suppress Error Band",
                         choices = c("Display Error Band", "Suppress Error Band"),
-                        selected= "Display Error Band")
+                        selected= "Display Error Band"),
+            selectInput("date",
+                        "Include or Exclude Participants before July 1, 2017",
+                        choices= c("Include Participants before July 1, 2017", "Exclude Participants before July 1, 2017"),
+                        selected= "Include Participants before July 1, 2017")
         ),
 
         # Show a plot of the generated distribution
