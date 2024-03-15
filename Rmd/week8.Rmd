@@ -54,8 +54,14 @@ week8_tbl %>%
 ```
 
 # **Analysis**
-```{r}
 
+
+```{r, echo=FALSE}
+cor.test(week8_tbl$avg_q1q6,week8_tbl$avg_q8q10)
+cor1 <-cor.test(week8_tbl$avg_q1q6,week8_tbl$avg_q8q10)$estimate
+cor2 <- format(cor1, digits=1)
+cor2 <- sub("^0", "", sprintf("%.2f", cor1))
 ```
+Based on the correlation test, the correlation between the mean scores for questions 1-6 and for the mean scores for questions 8-10 is `r cor2`. The p-value was not significant at .56. To format the correlation, I used format from the class slides. 
 
 # **Data Export**
