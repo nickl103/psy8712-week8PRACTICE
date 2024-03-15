@@ -7,13 +7,9 @@ output:
       df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # **Reproducible Image and Online Resources**
 An image of this project as of *date* can be accessed by clicking <INSERT IMAGE LINK>
-An interactive web app is available ny clicking <INSERT SHINY APP> instead
+An interactive web app is available by clicking <INSERT SHINY APP> instead
 
 # **Script Settings and Resources**
 ```{r, message=FALSE}
@@ -62,6 +58,13 @@ cor1 <-cor.test(week8_tbl$avg_q1q6,week8_tbl$avg_q8q10)$estimate
 cor2 <- format(cor1, digits=1)
 cor2 <- sub("^0", "", sprintf("%.2f", cor1))
 ```
-Based on the correlation test, the correlation between the mean scores for questions 1-6 and for the mean scores for questions 8-10 is `r cor2`. The p-value was not significant at .56. To format the correlation, I used format from the class slides. 
+Based on the correlation test, the correlation between the mean scores for questions 1-6 and for the mean scores for questions 8-10 is `r cor2`. The p-value was not significant at .56. To format the correlation, I used format() from the class slides. 
 
 # **Data Export**
+
+```{r}
+week8_tbl %>%
+  select(timeEnd, gender, avg_q1q6, avg_q8q10) %>%
+  write.csv("../shiny/w8shiny.csv")
+```
+
