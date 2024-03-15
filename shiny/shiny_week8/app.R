@@ -23,6 +23,10 @@ ui <- fluidPage(
                         "Select Gender",
                         choices= c("Male","Female","All"),
                         selected= "All"),
+            selectInput("errorband",
+                        "Display or Suppress Error Band",
+                        choices = c("Display Error Band", "Suppress Error Band"),
+                        selected= "Display Error Band")
         ),
 
         # Show a plot of the generated distribution
